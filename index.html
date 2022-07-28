@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+  </head>
+  <body class="font-monospace">
+    <!-----------------------------------------------------1. ENCABEZADO------------------------------------------------>
+
+    <header class="container-fluid">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div>
+            <img src="./img/logo.png" alt="Logo" />
+          </div>
+          <h5>Game Zone el refugio para habitar otros mundos</h5>
+          <div class="d-flex justify-content-center">
+            <a class="navbar-brand" href="#">Inicio</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Noticias</a
+                >
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Tienda</a
+                >
+                <a class="nav-link active" aria-current="page" href="#">Post</a>
+                <!-- --------------------- 1.1. implementación de botón registrate que envía a offcanvas ---------------->
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasExample"
+                  aria-controls="offcanvasExample"
+                >
+                  <i class="bi bi-box-arrow-in-right"></i> Regístrate
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!------------------------------ 1.2. offcanvas con formulario de registro ------------------------------->
+    <section>
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Registro</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">E-mail</label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Usuario</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Contraseña</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Confirmar contraseña</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="dropdown-menu">
+        <form class="px-4 py-3">
+          <div class="mb-3">
+            <label for="exampleDropdownFormEmail1" class="form-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleDropdownFormEmail1"
+              placeholder="email@example.com"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleDropdownFormPassword1" class="form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="exampleDropdownFormPassword1"
+              placeholder="Password"
+            />
+          </div>
+          <div class="mb-3">
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="dropdownCheck"
+              />
+              <label class="form-check-label" for="dropdownCheck">
+                Remember me
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">New around here? Sign up</a>
+        <a class="dropdown-item" href="#">Forgot password?</a>
+      </div>
+    </section>
+
+    <!----------------------------------2. SECCIÓN NOTICIAS CON IMPLEMENTACIÓN DE CARUSEL------------------------------->
+
+    <section class="container-fluid bg-dark">
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide container-sm"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="2000">
+            <img
+              src="./img/Transición/God of war.jpeg"
+              class="d-block w-100"
+              alt="Noticia God of War"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h6>GOD OF WAR</h6>
+              <p>
+                La próxima entrega de God of War llegará el próximo 9 de
+                noviembre de 2022
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img
+              src="./img/Transición/finalfantasy estreno.jpg"
+              class="d-block w-100"
+              alt="Noticia Final Fantasy"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h6>FINAL FANTASY</h6>
+              <p>
+                El "remake" de Final Fantasy VII Rebirth será el segundo de un
+                total de tres juegos
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img
+              src="./img/Transición/Ratchet-Clank.jpg"
+              class="d-block w-100"
+              alt="Noticia Ratchet Clank"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h6>RATCHET CLANK</h6>
+              <p>
+                Ratchet & Clank, la entrega que llegará en exclusiva para
+                Playstation 4 el próximo 20 de abril
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-------------------------------------------------- 3. SECCIÓN TIENDA ---------------------------------------------->
+
+    <section class="container p-4">
+      <h2 class="d-flex justify-content-center">Tienda</h2>
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <div>
+            <img
+              src="./img/Tienda/Terminator-02tienda.png"
+              alt=""
+              class="img-fluid w-100"
+            />
+          </div>
+          <div>
+            <p>Estación de juego Terminator</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div>
+            <img
+              src="./img/Tienda/chargertienda.png"
+              alt=""
+              class="img-fluid w-100"
+            />
+          </div>
+          <div>
+            <p>Puerto de carga</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div>
+            <img
+              src="./img/Tienda/Consola tienda.png"
+              alt=""
+              class="img-fluid w-100"
+            />
+          </div>
+          <div>
+            <p>Xbox 360</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <div>
+            <img
+              src="./img/Tienda/halo tienda.png"
+              alt=""
+              class="img-fluid w-100"
+            />
+          </div>
+          <div>
+            <p>Funko Pop Halo</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div>
+            <img
+              src="./img/Tienda/nintendo-switch.webp"
+              alt=""
+              class="img-fluid w-100"
+            />
+          </div>
+          <div>
+            <p>Nintendo-switch</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div>
+            <img
+              src="./img/Tienda/pcmaster tienda.png"
+              alt=""
+              class="img-fluid w-100"
+            />
+          </div>
+          <div>
+            <p>PC Gamer</p>
+          </div>
+        </div>
+      </div>
+      <!-- --------------------------------------- 3.1. Implementación de modal ---------------------------------------->
+      <div class="d-flex justify-content-center">
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Participa por uno de estos productos
+        </button>
+      </div>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Participa y gana
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Danos tu opinión sobre la página, sus artículos o productos y
+                participa en la rifa de uno de los productos de la tienda
+              </p>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Dirección de correo</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="correo@ejemplo.com"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label"
+                  >Escríbenos tu opinión</label
+                >
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                ></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button type="button" class="btn btn-danger">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--------------------------------- 4. SECCIÓN POST CON IMPLEMENTACIÓN DE CARDS ------------------------------------->
+
+    <section class="container-fluid p-4 bg-warning">
+      <div class="container-fluid">
+        <h2 class="d-flex justify-content-center">Post del mes</h2>
+        <h4 class="d-flex justify-content-center">The Game Awards</h4>
+        <p>
+          The Game Awards son una gala de premios de videojuegos realizada por
+          primera vez el 5 de diciembre de 2014 en el AXIS Theatre de Las Vegas.
+          Estos premios cuentan con el apoyo de grandes empresas de la
+          industria, tales como Activision, Electronic Arts, Kojima Productions,
+          Konami, Microsoft, Nintendo, Rockstar, Sony Computer Entertainment,
+          Valve Corporation, Ubisoft y Warner Brothers. Además de premiar a los
+          mejores juegos del año en diversas categorías, la gala también sirve
+          como medio para la presentación de futuros juegos y contenidos
+          descargables. Los premiados en las categorías de mejores videojuegos y
+          apartados técnicos son elegidos por un jurado especial, compuesto por
+          distintos medios periodísticos, mientras que los premios a los
+          jugadores más populares y equipos de eSport son votados por el público
+          vía en línea a través de su página oficial
+        </p>
+        <h6 class="d-flex justify-content-center">
+          A continuación encontrarás tarjetas de cada uno de los ganadores si no
+          sabes que nuevo juego probar
+        </h6>
+      </div>
+      <div class="container-fluid text-center">
+        <div class="row">
+          <div class="col mt-3">
+            <div class="card" style="width: 22rem">
+              <img
+                src="./img/Game award/2015 The Witcher Wild Hunt"
+                class="card-img-top"
+                alt="THE WITCHER 3: WILD HUNT 2015"
+              />
+              <div class="card-body">
+                <h5 class="card-title">THE WITCHER 3: WILD HUNT 2015</h5>
+                <p class="card-text">
+                  Juego de rol de acción con una perspectiva en tercera persona
+                  . Los jugadores controlan a Geralt de Rivia, un cazador de
+                  monstruos conocido como brujo
+                </p>
+                <a
+                  href="https://www.thewitcher.com/en"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Ir a la página</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col mt-3">
+            <div class="card" style="width: 22rem">
+              <img
+                src="./img/Game award/2016 overwatch.webp"
+                class="card-img-top"
+                alt="OVERWATCH 2016"
+              />
+              <div class="card-body">
+                <h5 class="card-title">OVERWATCH 2016</h5>
+                <p class="card-text">
+                  Overwatch pone a los jugadores
+                  en equipos de seis personas, con cada persona escogiendo uno
+                  de varios héroes disponibles, cada uno con movimientos y
+                  habilidades únicas
+                </p>
+                <a
+                  href="https://playoverwatch.com/es-es/"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Ir a la página</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col mt-3">
+            <div class="card" style="width: 22rem">
+              <img
+                src="./img/Game award/2017 zelda.jpg"
+                class="card-img-top"
+                alt="THE LEGEND OF ZELDA: 2017"
+              />
+              <div class="card-body">
+                <h5 class="card-title">THE LEGEND OF ZELDA: 2017</h5>
+                <p class="card-text">
+                  El jugador controla a Link, que despierta en un mundo
+                  postapocalíptico después de estar cien años durmiendo para
+                  derrotar a Ganon y salvar al reino de Hyrule
+                </p>
+                <a
+                  href="https://www.zelda.com/breath-of-the-wild/"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Ir a la página</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid text-center">
+        <div class="row">
+          <div class="col mt-3">
+            <div class="card" style="width: 22rem">
+              <img
+                src="./img/Game award/2018 Portada_God_of_War.webp"
+                class="card-img-top"
+                alt="GOD OF WAR 2018"
+              />
+              <div class="card-body">
+                <h5 class="card-title">GOD OF WAR 2018</h5>
+                <p class="card-text">
+                  Serie de videojuegos hack and slash creada por SCE Santa
+                  Monica Studio y distribuida por Sony Computer Entertainment
+                </p>
+                <a
+                  href="https://www.playstation.com/es-co/god-of-war/"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Ir a la página</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col mt-3">
+            <div class="card" style="width: 22rem">
+              <img
+                src="./img/Game award/2019 sekiro.jpg"
+                class="card-img-top"
+                alt="SEKIRO: shadows die twice 2019"
+              />
+              <div class="card-body">
+                <h5 class="card-title">SEKIRO: shadows die twice 2019</h5>
+                <p class="card-text">
+                  Videojuego de acción y aventura desarrollado por From Software
+                </p>
+                <a
+                  href="https://www.sekirothegame.com/"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Ir a la página</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col mt-3">
+            <div class="card" style="width: 22rem">
+              <img
+                src="./img/Game award/2020 the last of us.jpg"
+                class="card-img-top"
+                alt="THE LAST OF US || 2020"
+              />
+              <div class="card-body">
+                <h5 class="card-title">THE LAST OF US || 2020</h5>
+                <p class="card-text">
+                  Videojuego de terror y de acción y aventuras de 2020
+                  desarrollado por Naughty Dog
+                </p>
+                <a
+                  href="https://www.playstation.com/es-co/games/the-last-of-us-part-i/"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Ir a la página oficial</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!----------------------------------------------------- 5. PIÉ DE PÁGINA ------------------------------------------->
+
+    <footer class="container-fluid p-1">
+      <div class="container-fluid d-flex justify-content-center">
+        <p>
+          Henry Gomez - Karen Zapata &copy; Todos Los Derechos Reservados 2022
+        </p>
+      </div>
+      <div class="container-fluid d-flex justify-content-center gap-3">
+        <i class="bi bi-twitter"></i>
+        <i class="bi bi-instagram"></i>
+        <i class="bi bi-facebook"></i>
+        <i class="bi bi-pinterest"></i>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
